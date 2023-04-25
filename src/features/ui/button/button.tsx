@@ -1,3 +1,5 @@
+import styled from "./button.module.css";
+
 type ButtonType = "button" | "submit" | "reset" | undefined;
 
 type ButtonProps = {
@@ -7,5 +9,9 @@ type ButtonProps = {
 };
 
 export const Button = ({ title, ...rest }: ButtonProps) => {
-  return <button {...rest}>{title}</button>;
+  return (
+    <button className={styled["button"]} {...rest}>
+      {title}
+    </button>
+  );
 };
