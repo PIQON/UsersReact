@@ -10,7 +10,7 @@ import { UserProps } from "../users-item/users-item";
 
 export const AddUser = () => {
   const {
-    watch,
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -20,10 +20,8 @@ export const AddUser = () => {
 
   const formSubmit = (formData: UserProps) => {
     console.log(formData);
+    reset();
   };
-
-  console.log(watch("username"));
-  console.log(watch("age"));
 
   return (
     <Card additionalClass={styled["input"]}>
@@ -32,12 +30,14 @@ export const AddUser = () => {
           id="username"
           type="text"
           title="Username"
+          error={errors.username?.message}
           {...register("username")}
         />
         <FormElement
           id="age"
           type="number"
           title="Age (Years)"
+          error={errors.age?.message}
           {...register("age")}
         />
         <Button title="Add User" type="submit" />
