@@ -13,7 +13,7 @@ export const UsersContextProvider = ({ children }: RootChildren) => {
   const [users, setUsers] = useState<UserProps[]>([]);
 
   const addUser = (user: UserProps) => {
-    setUsers([...users, user]);
+    setUsers([...users, { ...user, id: Math.random().toString() }]);
   };
 
   return (

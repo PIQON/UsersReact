@@ -7,8 +7,10 @@ import { FormElement } from "../../ui/form-element/form-element";
 import styled from "./add-user.module.css";
 import { AddUserSchema } from "./add-user-schema";
 import { UserProps } from "../users-item/users-item";
+import { useUsersContext } from "../users-context/useUsersContext";
 
 export const AddUser = () => {
+  const { addUser } = useUsersContext();
   const {
     reset,
     register,
@@ -19,7 +21,7 @@ export const AddUser = () => {
   });
 
   const formSubmit = (formData: UserProps) => {
-    console.log(formData);
+    addUser(formData);
     reset();
   };
 

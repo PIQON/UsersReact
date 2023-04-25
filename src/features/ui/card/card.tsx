@@ -2,7 +2,7 @@ import { RootChildren } from "../../../types/shared";
 import styled from "./card.module.css";
 
 type CardProps = {
-  additionalClass: string;
+  additionalClass?: string;
 };
 
 export const Card = ({
