@@ -1,5 +1,11 @@
-function App() {
-  return <h1>Welcome!</h1>;
-}
+import { AddUser } from "./features/users/add-user/add-user";
+import { Users } from "./features/users/users";
 
-export default App;
+export const App = () => {
+  return (
+    <>
+      <AddUser />
+      <Users />
+    </>
+  );
+};
