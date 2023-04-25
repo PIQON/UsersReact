@@ -9,13 +9,9 @@
     <a href="https://price-component-ochre.vercel.app/">View a project demo</a>
   </p>
 
-![My Image](images/preview.png)
+![My Image](./src/assets/preview.png)
 
 </div>
-
-## LIGTHOUSE STATISTICS
-
-![My Image](images/lighthouse.png)
 
 <!-- TABLE OF CONTENTS -->
 <details>
