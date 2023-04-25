@@ -6,7 +6,7 @@
      Manage users list with React!
     <br />
     <br />
-    <a href="https://price-component-ochre.vercel.app/">View a project demo</a>
+    <a href="https://users-react.vercel.app/">View a project demo</a>
   </p>
 
 ![My Image](./src/assets/preview.png)
