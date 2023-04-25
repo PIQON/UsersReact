@@ -3,7 +3,7 @@ type ButtonType = "button" | "submit" | "reset" | undefined;
 type ButtonProps = {
   title: string;
   type: ButtonType;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const Button = ({ title, ...rest }: ButtonProps) => {
