@@ -7,7 +7,7 @@ export type UserProps = {
 export const UsersItem = ({ username, age }: UserProps) => {
   return (
     <li>
-      {username} ({age} years old)
+      <span>{username}</span> ({age} years old)
     </li>
   );
 };

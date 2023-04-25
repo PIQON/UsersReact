@@ -1,18 +1,18 @@
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { Button } from "./button";
 
 describe("Button component", () => {
-  it("renders the button correctly", () => {
-    const { getByText } = render(<Button title="Submit" type="button" />);
-    expect(getByText("Submit")).toBeTruthy();
+  it("Renders the button correctly", () => {
+    render(<Button title="Add User" type="submit" />);
+    const buttonElement = screen.getByRole("button", { name: "Add User" });
+    expect(buttonElement).toBeInTheDocument();
   });
 
-  it("calls onClick function when clicked", () => {
-    const onClickMock = jest.fn();
-    const { getByText } = render(
-      <Button title="Submit" type="button" onClick={onClickMock} />
-    );
-    fireEvent.click(getByText("Submit"));
-    expect(onClickMock).toHaveBeenCalled();
+  it("Correctly call onClick when appear", () => {
+    const mockedClick = jest.fn();
+    render(<Button title="Add User" type="submit" onClick={mockedClick} />);
+    const buttonElement = screen.getByRole("button", { name: "Add User" });
+    fireEvent.click(buttonElement);
+    expect(mockedClick).toHaveBeenCalled();
   });
 });
