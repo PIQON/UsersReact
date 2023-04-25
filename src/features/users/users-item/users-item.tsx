@@ -1,12 +1,12 @@
-type UserProps = {
-  name: string;
+export type UserProps = {
+  username: string;
   age: number;
 };
 
-export const UsersItem = ({ name, age }: UserProps) => {
+export const UsersItem = ({ username, age }: UserProps) => {
   return (
     <li>
-      {name} ({age} years old)
+      {username} ({age} years old)
     </li>
   );
 };

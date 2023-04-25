@@ -1,14 +1,45 @@
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import { Button } from "../../ui/button/button";
 import { Card } from "../../ui/card/card";
 import { FormElement } from "../../ui/form-element/form-element";
 import styled from "./add-user.module.css";
+import { AddUserSchema } from "./add-user-schema";
+import { UserProps } from "../users-item/users-item";
 
 export const AddUser = () => {
+  const {
+    watch,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserProps>({
+    resolver: yupResolver(AddUserSchema),
+  });
+
+  const formSubmit = (formData: UserProps) => {
+    console.log(formData);
+  };
+
+  console.log(watch("username"));
+  console.log(watch("age"));
+
   return (
     <Card additionalClass={styled["input"]}>
-      <form>
-        <FormElement id="username" type="text" title="Username" />
-        <FormElement id="age" type="text" title="Age (Years)" />
+      <form onSubmit={handleSubmit(formSubmit)}>
+        <FormElement
+          id="username"
+          type="text"
+          title="Username"
+          {...register("username")}
+        />
+        <FormElement
+          id="age"
+          type="number"
+          title="Age (Years)"
+          {...register("age")}
+        />
         <Button title="Add User" type="submit" />
       </form>
     </Card>
